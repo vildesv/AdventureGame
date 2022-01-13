@@ -1,0 +1,39 @@
+﻿--- Skrive om Adventure Game fra Javascript til C# --- 
+
+I boken "Koding for alle i JavaScript", er det et eksempel på et lite adventure spill i kapittel 19. 
+Dette egner seg veldig godt til å skrives om til en objektorientert C# console application. 
+I boken brukes Vue, men her er en versjon skrevet om til vanilla JavaScript: getacademy.github.io/AdventureOO
+
+--- OPPGAVE ---
+
+1. Ta utgangspunkt i modellen i JavaScript-versjonen og skriv klasser og C#-kode som lager det samme model-objektet (vist under). 
+Denne første delen av oppgaven er den viktigste. 
+Man trenger ikke nødvendigvis gjøre ferdig applikasjonen i C#, men å gjøre dette første punktet kan gi en god forståelse av hvordan man i C# må lage en egen datatype for hver type objekt og at denne malen eller datatypen er det som er en klasse. 
+
+I JavaScript inneholder dør-objektene to felt A og B som viser til navnet på  hvert sitt rom. I C#-versjonen i løsningsforslaget lar vi heller disse feltene være en referanse til et rom-objekt. 
+
+        const model = {
+            spiller: {
+                har: [],
+            },
+            rom: [
+                { navn: 'A', innhold: ['rød nøkkel'], start: true },
+                { navn: 'B', innhold: ['grønn nøkkel'] },
+                { navn: 'C', innhold: ['hvit nøkkel'] },
+                { navn: 'D', innhold: ['blå nøkkel'] },
+                { navn: 'E', innhold: ['grå nøkkel'] },
+                { navn: 'F', innhold: [], vunnet: true },
+            ],
+            dører: [
+                { A: 'B', B: 'A', farge: 'rød', åpen: false },
+                { A: 'D', D: 'A', farge: 'grønn', åpen: false },
+                { B: 'C', C: 'B', farge: 'grå', åpen: false },
+                { B: 'E', E: 'B', farge: 'blå', åpen: false },
+                { E: 'F', F: 'E', farge: 'hvit', åpen: false },
+            ]
+        };
+
+2. Neste skritt er å oversette funksjonen updateView() til C# - altså lage kode som viser den nåværende situasjonen.
+
+3. Siste skritt er å ta i mot kommandoer og implementere controller-funksjonene for å plukke opp nøkler, låse opp dører og gå gjennom dører. 
+Dette er foreløpig ikke dekket av løsningsforslaget, og det er helt ok å hoppe over denne biten. 
